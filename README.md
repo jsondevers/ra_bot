@@ -95,7 +95,7 @@ On your app's setting page, find the Config Vars section and click the Reveal Co
 
 Then click edit:
 
-![Edit your environment variables](http://i.groupme.com/796x212.png.b8979454fc4742c7bae688ac67262755)
+![Edit your environment variables]
 
 Fill out the form to add an environment variable to your app:
 
