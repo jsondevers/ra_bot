@@ -94,7 +94,7 @@ Then click edit:
 
 Fill out the form to add an environment variable to your app:
 
-  * In the "key" field type: BOT_ID
+  * In the "key" field type: GROUPMEBOT_ID
   * In the "value" field paste your Bot ID that you copied in the previous steps
   * Click the save button
 
