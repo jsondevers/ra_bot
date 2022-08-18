@@ -32,15 +32,14 @@ A simple GroupMe bot that reacts to messages sent within a group.
 
 Be sure to log in to Heroku, using your Heroku credentials, then click the link below.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
+[![Deploy]
 You should be taken to a page that looks like this:
 
-![Deploy to Heroku](http://i.groupme.com/837x662.png.36c63698644a4f61a9ff3d5af91caa5e)
+![Deploy to Heroku]
 
 Optionally, you can give your app a name, or instead leave it blank and let Heroku name it for you (you can change it later).
 
-![Success](https://i.groupme.com/959x932.png.85e7959a8a9a41c6b20f5f6b50aceecb)
+![Success]
 
 ## Next, create a GroupMe Bot:
 
@@ -49,11 +48,11 @@ https://dev.groupme.com/session/new
 
 Use your GroupMe credentials to log into the developer site.
 
-![Log into dev.groupme.com](https://i.groupme.com/640x292.png.38c9e590383149c1a01424fc61cdce4e)
+![Log into dev.groupme.com]
 
 Once you have successfully logged in, go to https://dev.groupme.com/bots/new
 
-![Create your new bot](http://i.groupme.com/567x373.png.242d18352d7742858cf9a263f597c5d9)
+![Create your new bot]
 
 Fill out the form to create your new bot:
 
@@ -71,11 +70,11 @@ https://dev.groupme.com/bots
 
 Click on the one you just created.
 
-![Select your new bot](http://i.groupme.com/871x333.png.5a33ef2b6ab74ea59d5aaa5569aaaf23)
+![Select your new bot]
 
 On your Bot's page, copy the Bot ID
 
-![Copy your Bot ID](http://i.groupme.com/615x295.png.3256190e86ed4cd7ae6cf09899c1f9a8)
+![Copy your Bot ID]
 
 ## Add your Bot ID to your Heroku app:
 
@@ -83,15 +82,15 @@ Go here to see all of your Heroku apps and select the one you just created befor
 
 https://dashboard-next.heroku.com/apps
 
-![Select your heroku app](http://i.groupme.com/920x722.png.46154d6b95f249539c594b129ddb7732)
+![Select your heroku app]
 
 On your app page, click settings in the top navigation:
 
-![Go to your app's settings](http://i.groupme.com/722x127.png.27c0a2e83c524064bd41bb66df76d14c)
+![Go to your app's settings]
 
 On your app's setting page, find the Config Vars section and click the Reveal Config Vars button:
 
-![Reveal your environment variables](http://i.groupme.com/606x181.png.94d5157963bc419886e98e038e3195c3)
+![Reveal your environment variables]
 
 Then click edit:
 
@@ -103,13 +102,13 @@ Fill out the form to add an environment variable to your app:
   * In the "value" field paste your Bot ID that you copied in the previous steps
   * Click the save button
 
-![Add the Bot ID environment variable](http://i.groupme.com/784x148.png.5790498a7acd46b289aca2be43e9c84e)
+![Add the Bot ID environment variable]
 
 ## Now go test your bot!
 
 Go to GroupMe and type "/ping" in the group where your bot lives to see it in action.
 
-![Test your Bot](http://i.groupme.com/821x587.png.7bcf55bed1c64acab83fa2c2ad0b0862)
+![Test your Bot]
 
 # Make it your own<a name="pull"></a>
 
