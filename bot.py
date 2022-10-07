@@ -26,7 +26,7 @@ def receive():
     if data["sender_type"] != "RA BOT":
 
         # parse the message and act accordingly
-        read(data["text"].lower())  # put it to lowercase
+        read(data["text"].lower())
         if data["text"].startswith("/ping"):
 
             send(data["name"] + " pinged me!")
@@ -47,7 +47,6 @@ def showMenu():
     return menuString
 
 
-# reads from events.txt file to display events
 def events():
     with open("events.txt") as f:
         lines = f.readlines()
@@ -60,17 +59,14 @@ def events():
 
 
 def read(msg):
-    text = msg.split(" ")  # break up msg by spaces
+    text = msg.split(" ")
 
-    # if any of these text is bad word -> do something
-
-    # also remember that all of these are lowercase
     if msg == "/menu":
         send(showMenu())
     elif msg == "/events":
         send(events())
     elif msg == "/duty?":
-        # onDuty()
+        # pulls data from Google Calendar API
         send("No")
     elif msg == "/pick":
         send(str(random.randint(1, 10)))
