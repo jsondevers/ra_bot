@@ -36,17 +36,14 @@ def receive():
 
 # show all menu-options
 def showMenu():
-    menuString = "RA BOT MENU: \n"
-    menuString += "You can send the bot a command!\n"
-    menuString += "Upcoming Events: /events \n"
-    menuString += "Is Jason on Duty right now?: /duty? \n"
-    menuString += "Pick a num between 1-10: /pick \n"
-    menuString += "Flip a coin: /flip \n"
-    menuString += "Phone Numbers: /numbers \n"
-
-    return menuString
-
-
+    return  "RA BOT MENU: \n
+             You can send the bot a command! \n
+             Upcoming Events: /events \n
+             Is Jason on Duty right now?: /duty? \n
+             Pick a num between 1-10: /pick \n
+             Flip a coin: /flip \n
+             Phone Numbers: /numbers \n"
+   
 def events():
     with open("events.txt") as f:
         lines = f.readlines()
