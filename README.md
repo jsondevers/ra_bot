@@ -8,9 +8,9 @@
 ### https://id.heroku.com/login
 
 ## Residents and Bot <3 below, names are blocked out for sake of privacy.
-### ![alt text](pic1.jpeg)
-### ![alt text](pic2.jpeg)
-### ![alt text](pic3.jpeg)
+### ![alt text](/images/pic1.jpeg)
+### ![alt text](/images/pic2.jpeg)
+### ![alt text](/images/pic3.jpeg)
 
 ### Useful Heroku & Git Commands:
 #### git add . 
