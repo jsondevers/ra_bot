@@ -7,7 +7,7 @@
 ### Built using Heroku Cloud (free cloud service and perfect for GroupMe bot) 
 ### https://id.heroku.com/login
 
-![alt text](https://github.com/jdevers1/ra_bot/blob/main/pic1.png?raw=true)
+![alt text](pic1.png)
 
 ### Useful Heroku & Git Commands:
 #### git add . 
