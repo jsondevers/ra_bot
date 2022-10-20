@@ -8,8 +8,8 @@
 ### https://id.heroku.com/login
 
 
+![Screenshot](pic1.png)
 
-![Alt text](/proof/pic1.png?raw=true "Title")
 
 ### Useful Heroku & Git Commands:
 #### git add . 
