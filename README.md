@@ -7,7 +7,7 @@
 ### Built using Heroku Cloud (free cloud service and perfect for GroupMe bot) 
 ### https://id.heroku.com/login
 
-![alt text](pic1.png)
+![alt text](pic1.jpeg)
 
 ### Useful Heroku & Git Commands:
 #### git add . 
