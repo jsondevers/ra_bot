@@ -1,58 +1,100 @@
 import os
 import requests
-import datetime
+import time
 import random
+import datetime
 
+from datetime import datetime
+from threading import Timer
 from bs4 import BeautifulSoup
 from flask import Flask, request
 
-page = requests.get("https://nutrition.umd.edu/")
-soup = BeautifulSoup(page, "html.parser")
+
 app = Flask(__name__)
 
-# homepage of actual URL
+
 @app.route("/", methods=["GET"])
 def home():
     return "Where my bot for Montgomery Hall lives :) - Jason, implementing SSL soon"
 
 
+# print() are in the log file
 @app.route("/", methods=["POST"])
 def receive():
     print("Incoming message:")
     data = request.get_json()
     print(data)
 
-    # Prevent self-reply
+    # prevent self-reply
     if data["sender_type"] != "RA BOT":
-
-        # parse the message and act accordingly
         read(data["text"].lower())
-        if data["text"].startswith("/ping"):
 
+        if data["text"].startswith("/ping"):
             send(data["name"] + " pinged me!")
 
     return "ok", 200
 
 
-# show all menu-options
+# happens everyday, using the timer at the bottom
+def update():
+    getFood()
+    goodMorning()
+
+
+def goodMorning():
+    send("Good Morning Montgomery Hall")
+
+
 def showMenu():
-    return  "RA BOT MENU: \n
+    return """RA BOT MENU: \n
              You can send the bot a command! \n
              Upcoming Events: /events \n
              Is Jason on Duty right now?: /duty? \n
              Pick a num between 1-10: /pick \n
              Flip a coin: /flip \n
-             Phone Numbers: /numbers \n"
-   
-def events():
-    with open("events.txt") as f:
-        lines = f.readlines()
-        eventString = ""
-        # Event1, Hour:Min, 9-20-10
-        for i in lines:
-            eventString += i
+             Phone Numbers: /numbers \n"""
 
-        return eventString
+
+def readEvents():
+    with open("events.txt") as f:
+        send("".join(f.readlines()))
+
+
+def readFood():
+    with open("food.txt") as f:
+        send("".join(f.readlines()))
+
+
+# scrapes data from umd dining menu
+def getFood():
+    page = requests.get("http://nutrition.umd.edu/")  # not secured smh
+    soup = BeautifulSoup(page.content, "html.parser")
+    elements = soup.find_all("a")
+    food = set()
+
+    for i in range(12, len(elements)):
+        item = str(elements[i])
+        item = item[item.find(">") + 1 :].replace(
+            "</a>", ""
+        )  # locate food, and remove tags
+
+        # don't add the leftover tags
+        if not (
+            item.startswith(" <span") or item.startswith("(") or item.startswith("http")
+        ):
+            food.add(item)
+
+    f = open("food.txt", "w")
+    for item in food:
+        f.write(item + "\n")
+
+    return food
+
+
+def chicken_tenders(food):
+    if "Chicken Tenders" in food:
+        return True
+    return False
 
 
 def read(msg):
@@ -61,7 +103,7 @@ def read(msg):
     if msg == "/menu":
         send(showMenu())
     elif msg == "/events":
-        send(events())
+        send(readEvents())
     elif msg == "/duty?":
         # pulls data from Google Calendar API
         send("No")
@@ -76,6 +118,14 @@ def read(msg):
     elif msg == "/numbers":
         # numbers() -> not shown for sake of confidentality
         send(numbers)
+    elif msg == "/food":
+        readFood()
+    elif msg == "/tendies":
+        food = getFood()
+        if chicken_tenders(food):
+            send("CHICKEN TENDERS @ 12")
+        else:
+            send("Sorry, not today")
 
     return True
 
@@ -89,3 +139,12 @@ def send(msg):
     }
     # sends message to GroupMe
     r = requests.post(url, json=data)
+
+
+while True:
+    present = datetime.today()
+    nextDay = present.replace(day=present.day + 1, hour=6, minute=0, second=0)
+    changeTime = nextDay - present
+
+    t = Timer(changeTime, update())
+    t.start()
