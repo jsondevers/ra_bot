@@ -4,7 +4,7 @@
 ### 'GROUPME_BOT_ID' is a environment variable created to represent the Bot's ID (doing this will help prevent someone impersonating your bot)
 
 
-###B uilt using Heroku Cloud (free cloud service and perfect for GroupMe bot) 
+### Built using Heroku Cloud (free cloud service and perfect for GroupMe bot) 
 ### https://id.heroku.com/login
 
 
