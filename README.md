@@ -7,7 +7,7 @@
 ### Built using Heroku Cloud (free cloud service and perfect for GroupMe bot) 
 ### https://id.heroku.com/login
 
-## Residents and Bot <3 below, names are blocked out for sake of privacy.
+## Residents and Bot below, names are blocked out for sake of privacy.
 ### ![alt text](/images/pic1.jpeg)
 ### ![alt text](/images/pic2.jpeg)
 ### ![alt text](/images/pic3.jpeg)
