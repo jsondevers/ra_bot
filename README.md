@@ -1,6 +1,6 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-## RA Bot for Montgomery Hall (still being updated)
+## RA Bot for Montgomery Hall
 
 
 ### 'GROUPME_BOT_ID' is a environment variable created to represent the Bot's ID (doing this will help prevent someone impersonating your bot)
