@@ -12,7 +12,7 @@
 ## Residents and Bot below, names are blocked out for sake of privacy.
 ### ![alt text](/images/pic1.jpeg)
 ### ![alt text](/images/pic2.jpeg)
-### ![alt text](/images/pic3.jpeg)
+
 
 ### Useful Heroku & Git Commands:
 #### git add . 
